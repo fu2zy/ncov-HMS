@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/ncov?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+#shiro配置路径
+shiro:
+  #放行路径
+  anon-urls:
+    - /toLogin*
+    - /login.html*
+    - /login/login
+    - /login/getCode
+    - /css/**
+    - /echarts/**
+    - /images/**
+    - /layui/**
+    - /layui_ext/**
+    - /js/**
+  login-url: /index.html
+  log-out-url: /login/logout*
+#从上以外拦截
+  authc-urls:
+    - /**
